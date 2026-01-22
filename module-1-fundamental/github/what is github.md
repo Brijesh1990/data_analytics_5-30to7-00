@@ -18,6 +18,8 @@ step 5: github all commands ....
 
         a) git init
         b) git add .
-        c) git commit -m "20-01-2026 all data uploaded"
-        d) git remote add origin https://github.com/Brijesh1990/data_analytics_5-30to7-00.git
-        e) git push -u origin master   
+        c) git commit -m "22-01-2026 all data uploaded"
+        d) git config --global user.name "Your Name"
+        e) git config --global user.email "your.email@example.com"
+        f) git remote add origin https://github.com/Brijesh1990/data_analytics_5-30to7-00.git
+        g) git push -u origin master   
