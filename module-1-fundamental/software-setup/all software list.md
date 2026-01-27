@@ -1,4 +1,5 @@
 data analytics :
+
 a) xampp (install)
 b) excel (install)
 c) python latest 
