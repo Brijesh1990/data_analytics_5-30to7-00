@@ -28,9 +28,9 @@
 
 ## what is column and rows in tables ? 
 
-   column :column in table also called fieldname 
+column :column in table also called fieldname 
 
-         | id | name    | email        | password | age | salary |
+| id | name    | email        | password | age | salary |
 |----|---------|--------------|----------|-----|--------|
 
    rows : rows in formate of data stored 
