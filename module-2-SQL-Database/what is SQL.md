@@ -89,6 +89,7 @@ column :column in table also called fieldname
    ```
 
 **How to create a table**
+
 **chart of tables create**
 
 | column name    | data types (size)     
@@ -106,6 +107,106 @@ column :column in table also called fieldname
 | long data               | enum (enumerated)
 
 
-   **syntax**
+   **syntax of create table**
 
-       
+   ```
+   create table tablename 
+   (
+    column name datatype(size) auto_increment primary key,
+    .
+    .
+    .
+    .
+    column name datatype(size)
+   )
+   ```
+   **examples**
+   ```
+   create table users
+(
+ user_id int AUTO_INCREMENT primary key,
+ name varchar(55),
+ password varchar(255),
+ age int,
+ salary float,
+ department varchar(200),
+ country varchar(155)   
+);
+```
+
+## alter : 
+   alter is used to add column | modify column | update column | delete column
+
+   **add new column**
+   ```
+  alter table users add state varchar(255);
+   
+   ```
+   **add new column after particular column**
+   ```
+  alter table users add photo blob after age;
+   
+   ```
+  **update any column name**
+  ```
+  alter table users change photo upload_image blob;
+  ```
+  **delete any columnname**
+  ```
+  ALTER TABLE `users`
+  DROP `age`; 
+
+  or
+ 
+  ALTER TABLE users
+  DROP age; 
+ 
+  ```
+
+## change : 
+   change the column name using alter 
+
+   ```
+  alter table users change photo upload_image blob;
+   ```
+
+## add : 
+   add new   column name using alter 
+   ```
+   alter table users add state varchar(255);
+   ```
+     
+
+## drop 
+   drop is used to delete database and table structures 
+
+   1. How to delete database 
+     ```
+     drop database data_analytics_flipkart;
+     ```
+     **after drop we never rollback any data**
+
+   2. How to delete table 
+     ```
+     drop table users;
+     ```
+     **after drop we never rollback any data in table**
+
+
+## truncate : 
+
+   truncate is used to empty or removed all data at once time.
+
+   **truncate**
+   ```
+   truncate table users
+   
+   ```
+   **after truncate we never rollback data**
+
+# rename 
+  rename change the table name 
+
+  ```
+   rename table users to flip_users 
+  ``` 
