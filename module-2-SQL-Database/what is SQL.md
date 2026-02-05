@@ -7,7 +7,6 @@
   5. sql create a table structures i.e also called structured data formate 
   6. sql used some commands or query to create a structures (database and table) 
 
-
 ## what is database ? 
 
    database is stored an information in form of tables 
@@ -210,3 +209,177 @@ column :column in table also called fieldname
   ```
    rename table users to flip_users 
   ``` 
+
+
+
+## what is DML ? 
+   DMl stands for data manupulation language 
+   DML is used to insert data | delete data | update data
+
+   1. insert 
+   2. delete 
+   3. update 
+
+   **insert**
+
+   **single data or rows insert**
+
+   ```
+   INSERT into tbl_country(countryname) VALUES('india')
+   ```
+   
+   **multiple data or rows insert**
+
+   ```
+   INSERT into tbl_country(countryname) VALUES('uk'),('usa'),('china'),('russia')
+   ```
+
+   ```
+    INSERT into tbl_country VALUES('null','srilanka'),('null','nigeria'),('null','uae'),('null','pakistan')
+   ```
+
+
+   **Insert all columns from one table into another.**
+
+   ```
+   INSERT INTO archive_users SELECT * FROM users;
+
+   ```
+
+
+## delete 
+
+   **delete**    
+   1. delete will be used to delete all data from tables 
+
+      ```
+      delete from users;
+      ```
+   2. delete will be used to delete particular data or rows from tables 
+
+      ```
+      delete from users where user_id=1;
+      or 
+      delete from users where name='vishal';
+      
+      ```   
+
+
+3. delete will be used to delete using in operator 
+
+      ```
+      delete from users where user_id in (3,5);
+      
+      ```   
+
+      
+4. delete will be used to delete using between 
+
+      ```
+      delete from users where user_id between 5 and 100;
+      
+      ```   
+
+      **Note**
+      after delete we will rollback our data using TCL
+
+
+# update the rows or data 
+
+  **update**
+
+  ```
+  update users set name='umang',age=35 where user_id=3;
+  ```
+ 
+
+# DQL 
+  DQL stands for data query language
+  DQL is used to fetch(select) data from tables 
+  
+  **select**
+
+  1. select all data 
+
+    ```
+    select * from users;
+    ```
+    
+  2. select particular  data from id 
+
+    ```
+    select * from users where user_id=2;
+    ```
+
+    
+  3. select particular data from column name
+
+    ```
+    select user_id , name from users;
+    or 
+    
+    select user_id , name from users where user_id=5;
+    ```
+
+  4. select data apply limit 
+
+     ```
+     select * from users where user_id limit 0,2;
+     or
+     select * from users where user_id limit 2,2;
+     or
+     select * from users where user_id limit 2,2;
+     or
+     
+     select * from users where user_id limit 1,5;
+     or 
+     
+     select * from users where user_id limit 2,5;
+     or
+     
+     select * from users where user_id limit 4,3;
+
+     ```
+  5. select data apply in 
+
+     ```
+     select * from users where user_id in (2,4,5,7);
+     ```
+     
+   6. select data apply between 
+
+     ```
+     select * from users where user_id between 4 and 7;
+     or
+     select * from users where user_id between 555 and 999;
+     ```
+
+    7. select data by ascending and descending order     
+
+       **order by**
+        order by is used to filter data from ascending and descending order   
+
+       **ascending**
+       ```
+        select * from users order by name asc;
+       ```
+
+        ```
+        select * from users order by user_id;
+       ```
+       **descending**
+       ```
+        select * from users order by name desc;
+       ```
+
+        ```
+        select * from users order by user_id desc;
+       ```
+
+       **group by**
+       
+       A group by is always work on group of columns 
+
+      ```
+       select sum(salary),department from flip_users group by department;
+      ```   
