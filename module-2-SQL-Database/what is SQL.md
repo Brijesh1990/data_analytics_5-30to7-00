@@ -516,7 +516,7 @@ column :column in table also called fieldname
      1. primary key is used to uniquely identify each record in a table
      2. primary key is used to create a relationship between two tables
      3. primary key is used to ensure that all values in a column are different
-     4. primary key always define on single column but we can define on multiple column also called composite primary key
+     4. primary key always define on single column.
      5. primary key cannot have null value
 
 
@@ -547,11 +547,170 @@ column :column in table also called fieldname
 | 6       | sumit    | s123456  | 35  | 88000  | sales      | india   |   
 
 
-2. foreign key : foreign key is used to establish a relationship between two tables
-3. unique key : unique key is used to ensure that all values in a column are different
-4. not null : not null is used to ensure that a column cannot have a null value
-5. default : default is used to provide a default value for a column when no value is specified
-6. check : check is used to ensure that the value in a column meets a specific condition
+ 2. **foreign key :**
+  1. foreign key is used to establish a relationship between two tables
+  2. foreign key is used to ensure referential integrity between two tables
+  3. foreign key is used to ensure that the value in a column must match the value in another table's primary key column
+  4. foreign key can have null value
 
 
+  **examples of foreign key**
+
+   **create table country**
+ 
+   |country_id | country_name |
+   |-----------|--------------|
+   | 1         | india        |
+   | 2         | uk           |
+   | 3         | usa          |
+
+
+
+   **create table users**
+
+| user_id | name     | password | age | salary | department | country_id |
+|---------|----------|----------|-----|--------|------------|------------|
+| 1       | brijesh  | b123456  | 34  | 89500  | it         | 1          |
+| 2       | aman     | a123456  | 28  | 55000  | hr         | 1          |
+| 3       | priya    | p123456  | 31  | 72000  | sales      | 1          |
+| 4       | rohit    | r123456  | 26  | 48000  | it         | 1          |
+| 5       | neha     | n123456  | 29  | | 61000  | hr         | 1        |
+
+**how to create foreign key**
+
+```   
+create table users
+(
+ user_id int AUTO_INCREMENT primary key,
+ name varchar(55),
+ password varchar(255),
+ age int,
+ salary float,
+ department varchar(200),
+ country_id int,
+ foreign key (country_id) references country(country_id) 
+);
+
+```
+
+3. **unique key :**
+  1. unique key is used to ensure that all values in a column are different
+  2. unique key is used to create a relationship between two tables
+  3. unique key is used to ensure that a column cannot have duplicate values
+  4. unique key can have null value one time only
+  5. unique key can be defined on single column or multiple columns
+ 
+   **examples of unique key**
+   
+   ```   
+create table users
+(
+ user_id int AUTO_INCREMENT primary key,
+ name varchar(55),
+ password varchar(255) unique,
+ age int,
+ salary float,
+ department varchar(200),
+ country_id int,
+ foreign key (country_id) references country(country_id) 
+);
+
+```
+  alter table users add unique (email);
+```
+              
+  4. not null : not null is used to ensure that a column cannot have a null value
+  5. default : default is used to provide a default value for a column when no value is specified
+
+
+
+
+
+
+
+
+
+## TCL (transactional control language)
+1. TCL stands for transactional control language
+2. TCL is used to manage transactions in a database
+3. TCL is used to ensure the integrity of a database
+4. TCL is used to rollback a transaction in case of an error
+5. TCL is used to commit a transaction to make it permanent in the database
+
+
+   1. **commit** : commit is used to save the changes made by a transaction to the database
+
+     **syntax**
+     ```
+       commit;
+   ```
+
+   2. **rollback** : rollback is used to undo the changes made by a transaction in case of an error
+
+     **syntax**
+     ```
+       rollback;
+   ```
+
+   **examples of commit and rollback**
+   ```
+   start transaction;
+   delete from users where user_id=2;
+   commit;
+
+   delete from users where user_id=1;
+   rollback;
+
+   ```
+ 
+   **Note:mysql is not support rollback in structures**
+
+
+## Home work
+
+  **students based database**
+
+1. create a database named "school"
+2. create a table named "students" with the following columns: id (primary key), name, age, grade, and country_id (foreign key referencing the country table).
+3. insert at least 5 records into the students table.
+4. create a table named "country" with the following columns: country_id (primary key) and country_name.
+5. insert at least 3 records into the country table.
+6. write a query to select all students along with their country names.
+7. write a query to find the average age of students in each grade.
+8. write a query to find the total number of students in each country.
+9. write a query to find the student with the highest grade.
+10. write a query to update the grade of a student with a specific id.
+11. write a query to delete a student with a specific id.
+
+
+  **add to cart based database**
+1. create a database named "ecommerce"
+2. create a table named "products" with the following columns: product_id (primary key), product_name, price, and stock.
+3. insert at least 5 records into the products table.
+4. create a table named "customers" with the following columns: customer_id (primary key), customer_name, email, and country_id (foreign key referencing the country table).
+5. insert at least 3 records into the customers table.   
+6. create a table named "orders" with the following columns: order_id (primary key), customer_id (foreign key referencing the customers table), product_id (foreign key referencing the products table), quantity, and order_date.
+7. insert at least 5 records into the orders table.   
+8. write a query to select all orders along with customer names and product names.
+9. write a query to find the total revenue generated from all orders.
+10. write a query to find the most popular product based on the quantity ordered.
+11. write a query to update the stock of a product after an order is placed.
+12. write a query to delete an order with a specific order_id.
+
+
+ **faculty based database**
+1. create a database named "university"
+2. create a table named "faculty" with the following columns: faculty_id (primary key), faculty_name, department, and country_id (foreign key referencing the country table) and provides email as unique key in faculty tables.
+3. insert at least 5 records into the faculty table.
+4. create a table named "courses" with the following columns: course_id (primary key), course_name, and faculty_id (foreign key referencing the faculty table).
+5. insert at least 3 records into the courses table.  
+6. create a table named "students" with the following columns: student_id (primary key), student_name, age, and country_id (foreign key referencing the country table).
+7. insert at least 5 records into the students table.
+8. create a table named "enrollments" with the following columns: enrollment_id (primary key), student_id (foreign key referencing the students table), course_id (foreign key referencing the courses table), and enrollment_date.
+9. insert at least 5 records into the enrollments table.
+10. write a query to select all enrollments along with student names and course names.
+11. write a query to find the total number of students enrolled in each course.
+12. write a query to find the faculty member teaching the most courses.
+13. write a query to update the department of a faculty member with a specific faculty_id.
+14. write a query to delete a student with a specific student_id.
 
