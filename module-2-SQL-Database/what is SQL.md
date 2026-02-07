@@ -383,3 +383,175 @@ column :column in table also called fieldname
       ```
        select sum(salary),department from flip_users group by department;
       ```   
+
+
+      **having**
+      having is used to filter data after group by 
+
+      ```
+       select sum(salary),department from flip_users group by department having sum(salary)>50000;
+      ```      
+
+      **like**
+      1. like is used to filter data using pattern matching
+      2. like is used to search for specific column data using wildcards 
+
+       **wildcards**
+       1. % (percent) : represents zero or more characters
+       2. _ (underscore) : represents a single character
+
+       **examples**
+      ```
+       select * from users where name like 'b%';
+       or
+       select * from users where name like '%a%';
+       or
+       select * from users where name like '%a';
+       or
+       select * from users where name like '_a%';
+      ```
+
+
+## what is sql function
+   sql function is used to perform some operations on data and return a single value 
+   
+   **types of sql function**
+   1. aggregate function 
+   2. scalar function
+
+   **aggregate function**
+   1. count() : count is used to count the number of rows in a table
+   2. sum() : sum is used to calculate the total of a numeric column
+   3. avg() : avg is used to calculate the average of a numeric column
+   4. min() : min is used to find the minimum value in a numeric column
+   5. max() : max is used to find the maximum value in a numeric column
+
+   **examples of aggregate function**
+   ```
+   select count(*) from users;
+   or
+   select sum(salary) from users;
+   or
+   select sum(salary) as total_sum_salary from flip_users;
+   or
+   select avg(salary) as average_salary from flip_users;
+   or
+   select min(salary) from flip_users;
+   or
+   select max(salary) from flip_users;
+   or
+   select department , sum(salary) as total_salary from flip_users group by department; 
+   or
+   select department , avg(salary) as average_salary from flip_users group by department;
+   or
+   select department , min(salary) as minimum_salary from flip_users group by department;
+   or
+   select department , max(salary) as maximum_salary from flip_users group by department;
+   or
+   select department , count(*) as total_employee from flip_users group by department;
+   or
+   select department , count(*) as total_employee from flip_users group by department having count(*)>2;
+   or
+   select department , sum(salary) as total_salary from flip_users group by department having sum(salary)>50000;
+   or
+   select department , avg(salary) as average_salary from flip_users group by department having avg(salary)>60000;
+   or
+   select department , min(salary) as minimum_salary from flip_users group by department having min(salary)>50000;
+
+   ```
+
+   **find second highest salary**
+    find second highest salary from table used subquery
+
+   ```
+   select max(salary) from flip_users where salary < (select max(salary) from flip_users);
+   ```
+
+
+   **scalar function**
+   1. upper() : upper is used to convert a string to uppercase
+   2. lower() : lower is used to convert a string to lowercase
+   3. length() : length is used to find the length of a string
+   4. now() : now is used to return the current date and time
+   5. date() : date is used to return the current date
+   6. time() : time is used to return the current time
+
+   Note: first we will create a table and insert some data then we will apply sql function on that data to understand better
+
+   Note: lastly we will learn about TCL (transactional control language) in next file
+
+
+   **examples of scalar function**
+   ```
+   select upper(name) from users;
+   or
+   select lower(name) from users;
+   or
+   select length(name) from users;
+   or
+   select now() from users;
+   or
+   select date() from users;
+   or
+   select time() from users;
+   or
+   select name , upper(name) as uppercase_name from users;
+   or
+   select name , lower(name) as lowercase_name from users;
+   or
+   select name , length(name) as name_length from users;
+   or
+   select name , now() as current_datetime from users;
+   or
+   select name , date() as current_date from users;
+   or
+   select name , time() as current_time from users;
+   
+   ```
+
+
+## sql key constraints
+1. **primary key :** 
+
+     1. primary key is used to uniquely identify each record in a table
+     2. primary key is used to create a relationship between two tables
+     3. primary key is used to ensure that all values in a column are different
+     4. primary key always define on single column but we can define on multiple column also called composite primary key
+     5. primary key cannot have null value
+
+
+     **examples of primary key**
+
+       ```
+         create table users
+         (
+         user_id int AUTO_INCREMENT primary key,
+         name varchar(55),
+         password varchar(255),
+         age int,
+         salary float,
+         department varchar(200),
+         country varchar(155)   
+         );
+         ```
+
+      **examples in fromate**
+
+      | user_id | name     | password | age | salary | department | country |
+|---------|----------|----------|-----|--------|------------|---------|
+| 1       | brijesh  | b123456  | 34  | 89500  | it         | india   |
+| 2       | aman     | a123456  | 28  | 55000  | hr         | india   |
+| 3       | priya    | p123456  | 31  | 72000  | sales      | india   |
+| 4       | rohit    | r123456  | 26  | 48000  | it         | india   |
+| 5       | neha     | n123456  | 29  | 61000  | hr         | india   |
+| 6       | sumit    | s123456  | 35  | 88000  | sales      | india   |   
+
+
+2. foreign key : foreign key is used to establish a relationship between two tables
+3. unique key : unique key is used to ensure that all values in a column are different
+4. not null : not null is used to ensure that a column cannot have a null value
+5. default : default is used to provide a default value for a column when no value is specified
+6. check : check is used to ensure that the value in a column meets a specific condition
+
+
+
