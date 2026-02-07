@@ -535,9 +535,9 @@ column :column in table also called fieldname
          );
          ```
 
-      **examples in fromate**
+**examples in fromat**
 
-      | user_id | name     | password | age | salary | department | country |
+| user_id | name     | password | age | salary | department | country |
 |---------|----------|----------|-----|--------|------------|---------|
 | 1       | brijesh  | b123456  | 34  | 89500  | it         | india   |
 | 2       | aman     | a123456  | 28  | 55000  | hr         | india   |
@@ -713,4 +713,6 @@ create table users
 12. write a query to find the faculty member teaching the most courses.
 13. write a query to update the department of a faculty member with a specific faculty_id.
 14. write a query to delete a student with a specific student_id.
+
+**Note: after creating database and tables you will insert some data in that tables then you will apply all the queries on that data to understand better**
 
