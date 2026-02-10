@@ -716,3 +716,34 @@ create table users
 
 **Note: after creating database and tables you will insert some data in that tables then you will apply all the queries on that data to understand better**
 
+## solutions of students tables 
+
+create table tbl_student 
+(
+ student_id int AUTO_INCREMENT primary key,
+ studentname varchar(255),
+ studentage int,
+ phone bigInt,
+ address text,
+ grade varchar(255),
+ faculty_id int REFERENCES tbl_faculty(faculty_id),
+ department_id int REFERENCES tbl_department(department_id),
+ country_id int REFERENCES tbl_country(country_id)   
+)
+
+1) select student with there countryname
+
+select tbl_student .*, countryname from tbl_student join tbl_country on tbl_student.country_id=tbl_country.country_id;
+
+or
+
+select student_id,studentname,address,grade, countryname from tbl_student join tbl_country on tbl_student.country_id=tbl_country.country_id
+
+2) select avg(studentage) as average_student_age from tbl_student
+3) select avg(studentage) as average_student_age, studentage from tbl_student group by grade
+4) select COUNT(student_id) as total_student from tbl_student group by country_id;
+5) select COUNT(student_id) as total_student,countryname from tbl_student  join tbl_country on tbl_student.country_id=tbl_country.country_id group by countryname;
+6) select studentname from tbl_student  where grade='A'
+7) update tbl_student set grade='A' where student_id=4;
+8) delete from tbl_student where student_id=4;
+
