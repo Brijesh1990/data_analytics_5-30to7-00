@@ -238,7 +238,6 @@ column :column in table also called fieldname
     INSERT into tbl_country VALUES('null','srilanka'),('null','nigeria'),('null','uae'),('null','pakistan')
    ```
 
-
    **Insert all columns from one table into another.**
 
    ```
@@ -622,14 +621,6 @@ create table users
   4. not null : not null is used to ensure that a column cannot have a null value
   5. default : default is used to provide a default value for a column when no value is specified
 
-
-
-
-
-
-
-
-
 ## TCL (transactional control language)
 1. TCL stands for transactional control language
 2. TCL is used to manage transactions in a database
@@ -668,8 +659,7 @@ create table users
 
 ## Home work
 
-  **students based database**
-
+**students based database**
 1. create a database named "school"
 2. create a table named "students" with the following columns: id (primary key), name, age, grade, and country_id (foreign key referencing the country table).
 3. insert at least 5 records into the students table.
@@ -684,19 +674,89 @@ create table users
 
 
   **add to cart based database**
-1. create a database named "ecommerce"
+1. create a database named "ecommerce_app"
+
 2. create a table named "products" with the following columns: product_id (primary key), product_name, price, and stock.
+
 3. insert at least 5 records into the products table.
+
 4. create a table named "customers" with the following columns: customer_id (primary key), customer_name, email, and country_id (foreign key referencing the country table).
+
 5. insert at least 3 records into the customers table.   
+
 6. create a table named "orders" with the following columns: order_id (primary key), customer_id (foreign key referencing the customers table), product_id (foreign key referencing the products table), quantity, and order_date.
+
 7. insert at least 5 records into the orders table.   
+
 8. write a query to select all orders along with customer names and product names.
+
 9. write a query to find the total revenue generated from all orders.
+
 10. write a query to find the most popular product based on the quantity ordered.
+
 11. write a query to update the stock of a product after an order is placed.
+
 12. write a query to delete an order with a specific order_id.
 
+ **all solutions of ecommerce_app database**
+
+ ```
+1) create database ecommerce_app
+
+2) create table products
+(
+    product_id int AUTO_INCREMENT primary key,
+    product_name varchar(255),
+    price int, 
+    stock int
+    
+)
+
+3) INSERT INTO products
+VALUES(NULL, "samsung_guru",1550,5),(NULL, "oppo",45500,10),(NULL, "vivo",1550,15),(NULL, "shoes",550,2),(NULL, "mens T-shirts",150,5)
+
+4) create table country
+(
+    country_id int AUTO_INCREMENT primary key,
+    country_name varchar(255)
+    
+)
+
+5)  create table customers
+(
+    customer_id int AUTO_INCREMENT primary key,
+    customer_name varchar(255),
+    email  varchar(255), 
+    country_id int REFERENCES country(country_id)
+    
+)
+
+6) create table orders
+(
+    order_id int AUTO_INCREMENT primary key,
+    customer_id int REFERENCES customers(customer_id),
+    product_id int REFERENCES products(product_id),
+    qty int,
+    order_date varchar(255) 
+    
+    )
+
+7) select orders .*, customer_name,product_name from orders join customers on orders.customer_id=customers.customer_id join products on orders.product_id=products.product_id
+
+8) select sum(price) as total_revenue from orders join products on orders.product_id=products.product_id
+
+9) select order_id,qty,product_name from orders join products on orders.product_id=products.product_id where qty >=1
+
+10) select order_id,qty,product_name from orders join products on orders.product_id=products.product_id where qty >=15
+
+11) UPDATE products 
+JOIN orders  ON orders.product_id = products.product_id
+SET products.stock = products.stock - orders.qty
+WHERE order_id= 1;
+
+12) delete from orders where order_id=2;
+
+ ```
 
  **faculty based database**
 1. create a database named "university"
@@ -708,6 +768,7 @@ create table users
 7. insert at least 5 records into the students table.
 8. create a table named "enrollments" with the following columns: enrollment_id (primary key), student_id (foreign key referencing the students table), course_id (foreign key referencing the courses table), and enrollment_date.
 9. insert at least 5 records into the enrollments table.
+
 10. write a query to select all enrollments along with student names and course names.
 11. write a query to find the total number of students enrolled in each course.
 12. write a query to find the faculty member teaching the most courses.
@@ -716,8 +777,9 @@ create table users
 
 **Note: after creating database and tables you will insert some data in that tables then you will apply all the queries on that data to understand better**
 
-## solutions of students tables 
+ **solutions of students tables** 
 
+```
 create table tbl_student 
 (
  student_id int AUTO_INCREMENT primary key,
@@ -740,10 +802,200 @@ or
 select student_id,studentname,address,grade, countryname from tbl_student join tbl_country on tbl_student.country_id=tbl_country.country_id
 
 2) select avg(studentage) as average_student_age from tbl_student
+
 3) select avg(studentage) as average_student_age, studentage from tbl_student group by grade
+
 4) select COUNT(student_id) as total_student from tbl_student group by country_id;
+
 5) select COUNT(student_id) as total_student,countryname from tbl_student  join tbl_country on tbl_student.country_id=tbl_country.country_id group by countryname;
+
 6) select studentname from tbl_student  where grade='A'
+
 7) update tbl_student set grade='A' where student_id=4;
+
 8) delete from tbl_student where student_id=4;
+```
+
+**solutions of university database**
+
+
+## what is Normalization in SQL 
+
+   Normalization is a process where we normalize our tables for removed redundancy or dublicate format in tables.
+
+   **types of Normalization**
+
+   1. 1NF
+   2. 2NF
+   3. 3NF 
+   4. 4NF
+
+   **1NF**
+   1NF is a normalization form in table to provides basic structures with PK(primary).
+
+
+   **examples**
+
+      ```
+    create table country
+    (
+    country_id int AUTO_INCREMENT primary key,
+    country_name varchar(255)
+    
+    )
+
+      ```
+   
+
+   **2NF**
+   2NF is a normalization form in table to provides basic structures with PK(primary key) and provides a relation between one table to another table using FK(foreign key).
+
+
+   **examples**
+
+      ```
+    create table country
+    (
+    country_id int AUTO_INCREMENT primary key,
+    country_name varchar(255)
+    
+    )
+
+      ```
+
+      ```
+     create table users
+    (
+    user_id int AUTO_INCREMENT primary key,
+    country_id int REFERENCES country(country_id),
+    name varchar(255),
+    age int,
+    address text 
+    )
+      ```
+
+   **3NF**
+   3NF is a normalization form in table to provides basic structures with PK(primary key) and provides a relation between one table to another table using FK(foreign key) with 3NF relations.
+
+   **examples**
+
+      ```
+    create table country
+    (
+    country_id int AUTO_INCREMENT primary key,
+    country_name varchar(255)
+    
+    )
+
+      ```
+     ```
+      create table department
+    (
+    department_id int AUTO_INCREMENT primary key,
+    dep_name varchar(255)
+    
+    )
+     ``` 
+     ```
+     create table users
+    (
+    user_id int AUTO_INCREMENT primary key,
+    country_id int REFERENCES country(country_id),
+    department_id int REFERENCES department(department_id),
+    name varchar(255),
+    age int,
+    address text 
+    )
+      ```
+   
+
+## sql joins 
+
+   sql join are used to join tables with match column data if data matched return and join tables if data not matched return null values.
+
+## types of joins 
+
+  1. join 
+  2. inner join 
+  3. outer join 
+     1. left outer join 
+     2. right outer join 
+     3. full outer join(this is not support)
+  4. cross join     
+
+**examples of join**
+
+ sql join are used to join tables with match column data if data matched return and join tables if data not matched return null values.
+
+  ```
+  select orders.*,customer_name,product_name from orders join customers on orders.customer_id=customers.customer_id join products on products.product_id=orders.product_id; 
+  ```
+
+
+  
+**examples of innerjoin**
+
+ sql join are used to join tables with match column data if data matched return and join tables if data not matched return null values.
+ Note : almost join and inner join is same 
+  ```
+  select orders.*,customer_name,product_name from orders inner join customers on orders.customer_id=customers.customer_id inner join products on products.product_id=orders.product_id; 
+
+  or
+
+   select order_id,qty,customer_name,product_name from orders inner join customers on orders.customer_id=customers.customer_id inner join products on products.product_id=orders.product_id; 
+  ```
+
+
+  **outer join**
+  1. left join 
+  2. right join 
+  3. full join 
+
+  **left join** 
+  left join  are matched column data from first table of left rows with second table of left rows if data matched return all with join if data not matched return null data.
+
+  ``` 
+   select orders.*,customer_name,product_name from orders left join customers on orders.customer_id=customers.customer_id  left join products on products.product_id=orders.product_id;
+  ```
+  
+
+   **right join** 
+    right join  are matched column data from second table of right rows with first table of right rows if data matched return all with right join if data not matched return null data.
+
+    ``` 
+    select orders.*,customer_name,product_name from orders right join customers on orders.customer_id=customers.customer_id  right join products on products.product_id=orders.product_id;
+
+    or
+
+    select customers.*,country_name from customers right join country on customers.country_id=country.country_id
+
+     or
+     Note : get and join customers name in orders who is never made any orders
+
+     select orders.*,customer_name from orders right join customers on orders.customer_id=customers.customer_id
+ 
+     ```
+
+   **cross join**
+
+   cross join is used to multiply a tables with numbers of rows and return dublicate data from tables 
+
+   ```
+   select * from customers cross join country;
+   
+   ```
+
+# what is view
+
+# what is index
+
+# what is trigger
+
+# what is store procedures 
+
+# what is distinct in sql 
+
+# what is having in sql 
+
+# how to rollback data from sql 
 
