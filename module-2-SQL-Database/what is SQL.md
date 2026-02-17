@@ -985,17 +985,83 @@ select student_id,studentname,address,grade, countryname from tbl_student join t
    
    ```
 
+
+   **what is distinct**
+
+   select the diffrent values from tables 
+
+   **examples**
+
+   ```
+   SELECT DISTINCT address from tbl_student
+   ```
+
+   **what is enum data types**
+
+   enum stands for en enumurated data types stored multiples values 
+
+   ```
+   create table users
+    (
+    user_id int AUTO_INCREMENT primary key,
+    country_id int REFERENCES country(country_id),
+    department_id int REFERENCES department(department_id),
+    name varchar(255),
+    age int,
+    address text,
+    status enm("pending","approved","rejected") not null default "pending" 
+    )
+
+   ```
+
 # what is view
 
+   A view is used to create a dublicate or clone of  tables 
+   A view is used to hide some data from some users there we create 
+   A view can be insert | delete | update 
+   A view also effect origin tables 
+
+   **examples**
+
+   **How to create view**
+
+   ```
+   create view view_flip_users as select user_id,name,password  from flip_users where user_id in (1,3,5);
+   ``` 
+
+   **insert | delete | update view**
+
+   ```
+   select * from view_flip_users;
+   
+   select `data_analytics_flipkart`.`flip_users`.`user_id` AS `user_id`,`data_analytics_flipkart`.`flip_users`.`name` AS `name`,`data_analytics_flipkart`.`flip_users`.`password` AS `password` from `data_analytics_flipkart`.`flip_users` where `data_analytics_flipkart`.`flip_users`.`user_id`
+
+   ```
+
 # what is index
+
+  An index is used to performed or fast search optimization sql tables data
+  An index create for fast search data from tables 
+  An index is created for optimized speed of tables data 
+  A index is applied its look up fast search data from tables 
+
+  **create an index**
+  
+  **single index**
+
+  ```
+    create index indx_name on flip_users(name);  
+  ```
+
+  **composite index set on multiple columns**
+  ```
+    create index ind on flip_users(user_id,password,salary,department);  
+  ```
+
 
 # what is trigger
 
 # what is store procedures 
-
-# what is distinct in sql 
-
-# what is having in sql 
 
 # how to rollback data from sql 
 
