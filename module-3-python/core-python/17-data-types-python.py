@@ -97,13 +97,30 @@
 # print(employee[3])
 
 # set : set stored data using {}
-#set is used to stored null {}
+# set is used to stored null {}
 
 # emp={'123',"brijesh"}
 # emp={'null'}
 # emp={"brijesh",36,"150 feet ring road"}
 # emp={1:"True"}
 # print(type(emp)) 
+
+# set : set is a datatypes in python 
+# set stored inside of {}
+# set stored in unordered inside of {}
+# set is mutable objects 
+# set will stored all data types 
+
+# emp={'null'}
+# print(type(emp))
+
+# emp={1,2,4,6,8,2}
+# print(type(emp))
+
+# emp={1,2,5,6,7,"brijesh"}
+# print(type(emp))
+
+
 
        
            
