@@ -10,6 +10,9 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -62,37 +65,121 @@
                         Me</a>
                 </nav>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile Hamburger Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" aria-label="Toggle Menu"
-                        class="text-gray-600 hover:text-primary focus:outline-none p-2 transition-colors">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                        class="hamburger-btn focus:outline-none p-2 rounded-lg">
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
                     </button>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu (hidden by default) -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute w-full shadow-xl transition-all origin-top">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#home"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 transition-colors mobile-link">Home</a>
-                <a href="#about"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 transition-colors mobile-link">About</a>
-                <a href="#skills"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 transition-colors mobile-link">Skills</a>
-                <a href="#projects"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 transition-colors mobile-link">Projects</a>
-                <a href="#contact"
-                    class="block px-3 py-3 mt-4 text-center rounded-md text-base font-medium bg-primary text-white hover:bg-blue-700 transition-colors shadow-md mobile-link">Hire
-                    Me</a>
-            </div>
-        </div>
     </header>
+
+    <!-- Sidebar Overlay (dark backdrop) -->
+    <div id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Left Sidebar Drawer -->
+    <aside id="mobile-sidebar"
+        class="fixed top-0 left-0 h-full w-72 bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Sidebar Header -->
+        <div
+            class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-primary/5 to-accent/5">
+            <a href="#" class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                Brijesh Data scientist
+            </a>
+            <button id="sidebar-close-btn" aria-label="Close Menu"
+                class="text-gray-400 hover:text-red-500 transition-colors p-1.5 rounded-lg hover:bg-red-50">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar Nav Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+            <a href="#home"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
+            </a>
+            <a href="#about"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                About
+            </a>
+            <a href="#skills"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                Skills
+            </a>
+            <a href="#projects"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                Projects
+            </a>
+            <a href="#gallery"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Gallery
+            </a>
+            <a href="#experience"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Experience
+            </a>
+            <a href="#certifications"
+                class="mobile-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-blue-50 hover:text-primary transition-all group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                Certifications
+            </a>
+        </nav>
+
+        <!-- Sidebar Footer CTA -->
+        <div class="px-4 pb-8 pt-4 border-t border-gray-100">
+            <a href="#contact"
+                class="mobile-link flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Hire Me
+            </a>
+        </div>
+    </aside>
 
     <!-- Placeholder Content to Demonstrate Scrolling -->
     <main class="pt-20">
@@ -100,7 +187,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
                 <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
                     <!-- Text Content -->
-                    <div class="flex-1 text-center lg:text-left z-10">
+                    <div class="flex-1 text-center lg:text-left z-10" data-aos="fade-right">
                         <p class="text-primary font-bold tracking-wider uppercase mb-3 text-sm animate-fade-in-up">
                             Hello, I'm</p>
                         <h1 class="text-5xl md:text-6xl font-extrabold text-secondary mb-4 leading-tight">
@@ -166,7 +253,7 @@
                     </div>
 
                     <!-- Hero Image & Blob Decoration -->
-                    <div class="flex-1 w-full max-w-md lg:max-w-lg relative">
+                    <div class="flex-1 w-full max-w-md lg:max-w-lg relative" data-aos="fade-left">
                         <!-- Decorative Blob shape behind image -->
                         <div
                             class="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-full filter blur-2xl opacity-30 animate-pulse">
@@ -212,7 +299,7 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">My Background</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">About Me</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
@@ -220,7 +307,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Profile / Professional Image -->
-                    <div class="relative max-w-md mx-auto lg:mx-0">
+                    <div class="relative max-w-md mx-auto lg:mx-0" data-aos="fade-right">
                         <div class="absolute inset-0 bg-blue-100 rounded-2xl transform translate-x-4 translate-y-4">
                         </div>
                         <img class="relative rounded-2xl shadow-xl w-full h-auto object-cover border border-gray-100"
@@ -235,7 +322,7 @@
                     </div>
 
                     <!-- Professional Summary Text -->
-                    <div>
+                    <div data-aos="fade-left">
                         <h4 class="text-2xl font-bold text-secondary mb-4">Bridging the gap between <span
                                 class="text-primary">Data</span> and <span class="text-primary">Decisions</span></h4>
                         <p class="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -274,14 +361,15 @@
         <section id="skills" class="py-24 bg-gray-50 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">My Toolkit</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Technical Skills</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
 
                 <!-- Skills Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up"
+                    data-aos-delay="100">
 
                     <!-- Skill Card 1: Data Analysis & Programming -->
                     <div
@@ -434,14 +522,14 @@
         <section id="projects" class="py-24 bg-white border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Portfolio</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Featured Projects</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
 
                 <!-- Projects Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
 
                     <!-- Project Card 1: Sales Dashboard (Power BI) -->
                     <div
@@ -644,7 +732,7 @@
         <section id="gallery" class="py-24 bg-gray-50 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Visual Showcase</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Data Visualizations</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
@@ -653,7 +741,8 @@
                 </div>
 
                 <!-- Gallery Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up"
+                    data-aos-delay="100">
                     <!-- Gallery Item 1 -->
                     <div
                         class="relative group rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white cursor-pointer h-64">
@@ -763,13 +852,13 @@
         <section id="experience" class="py-24 bg-white border-b border-gray-200">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">My Journey</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Experience & Education</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
 
-                <div class="space-y-12">
+                <div class="space-y-12" data-aos="fade-up" data-aos-delay="100">
                     <!-- Experience Item 1 -->
                     <div class="relative pl-8 sm:pl-32 group">
                         <!-- Timeline Line -->
@@ -839,13 +928,14 @@
         <section id="certifications" class="py-24 bg-gray-50 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Qualifications</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Certifications</h3>
                     <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up"
+                    data-aos-delay="100">
                     <!-- Cert 1 -->
                     <div
                         class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-default">
@@ -890,7 +980,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <!-- Contact Info -->
-                    <div>
+                    <div data-aos="fade-right">
                         <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Get in Touch</h2>
                         <h3 class="text-3xl md:text-4xl font-extrabold text-secondary mb-6">Let's Work Together</h3>
                         <p class="text-gray-600 mb-8 max-w-lg text-lg leading-relaxed">
@@ -949,8 +1039,9 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm relative">
-                        <form action="#" method="POST" class="space-y-6 relative z-10">
+                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm relative"
+                        data-aos="fade-left">
+                        <form action="send_email.php" method="POST" class="space-y-6 relative z-10">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
                                 <input type="text" id="name" name="name"
@@ -1015,6 +1106,16 @@
             </div>
         </footer>
     </main>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    </script>
 
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
