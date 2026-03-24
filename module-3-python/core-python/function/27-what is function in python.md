@@ -18,4 +18,10 @@
         print("hi brijesh")
     test()    
 
+
+    types of function :
+
+      1. user defined function
+      2. pre defined function 
+         ex: print()  | type() | input() | upper()  | lower()  
   ```
