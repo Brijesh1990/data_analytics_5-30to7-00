@@ -1,0 +1,1 @@
+hi i am used string array tuple and dictionary in python
