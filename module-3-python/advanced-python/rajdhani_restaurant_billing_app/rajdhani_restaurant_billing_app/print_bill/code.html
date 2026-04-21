@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary": "#ffffff",
+                "primary": "#49000a",
+                "surface": "#faf9f6",
+                "primary-fixed-dim": "#ffb3b2",
+                "on-error-container": "#93000a",
+                "on-primary-fixed-variant": "#84232a",
+                "inverse-primary": "#ffb3b2",
+                "surface-variant": "#e3e2e0",
+                "on-secondary-fixed": "#261a00",
+                "on-primary-container": "#f4777a",
+                "on-surface": "#1a1c1a",
+                "secondary-fixed-dim": "#f1bf4c",
+                "secondary": "#795900",
+                "inverse-surface": "#2f312f",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "surface-container": "#efeeeb",
+                "inverse-on-surface": "#f2f1ee",
+                "surface-container-low": "#f4f3f1",
+                "tertiary-container": "#443123",
+                "outline-variant": "#ddc0bf",
+                "on-tertiary-fixed-variant": "#574333",
+                "on-secondary-fixed-variant": "#5b4300",
+                "primary-container": "#6b0f1a",
+                "on-tertiary-container": "#b39985",
+                "on-error": "#ffffff",
+                "on-surface-variant": "#564241",
+                "error-container": "#ffdad6",
+                "secondary-container": "#fdca56",
+                "surface-container-highest": "#e3e2e0",
+                "secondary-fixed": "#ffdf9e",
+                "tertiary-fixed-dim": "#dec1ac",
+                "on-tertiary-fixed": "#28180b",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed": "#fbddc7",
+                "surface-dim": "#dbdad7",
+                "surface-container-high": "#e9e8e5",
+                "on-background": "#1a1c1a",
+                "tertiary": "#2c1c0f",
+                "on-tertiary": "#ffffff",
+                "background": "#faf9f6",
+                "outline": "#8a7171",
+                "surface-bright": "#faf9f6",
+                "on-primary-fixed": "#410008",
+                "primary-fixed": "#ffdad9",
+                "surface-tint": "#a43a3f",
+                "on-secondary-container": "#735500"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Noto Serif"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .receipt-glass {
+            background: rgba(244, 243, 241, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#faf9f6] dark:bg-[#1c1b1a] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#f4f3f1] dark:hover:bg-[#2c1c0f] transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-[#49000a] dark:text-[#ffb3b4]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-2xl font-serif font-bold text-[#49000a] dark:text-[#ffb3b4] tracking-tight">Rajdhani</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-sans uppercase text-[10px] font-bold tracking-widest text-on-surface-variant">Billing Terminal</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional staff portrait avatar of a restaurant manager in formal attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW6VPskrZyNQm191Vnr54uMxyxosjxXKDKeE0p6XIN-u2tKhUSCZLOomspONqDpObEPzCoU8aVG4A4tOmS1qwUL-VwOWCDitbK5YqYW3ByC5u1_ZSWQzoEhtofejn0yYATw7_Ed-0NbyBz6wFYc-rVMOv_GYnfcSPiwsIRIEE0pLOao64xK0LZ4NrP3BZqPxpQVZaiszShEgnl2grFKF9jo4DPnODXcgawI_ngxIb3h3QcZvONwqI3QGXg0sn-ks6OQpsgjRBeGyVW"/>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-6xl mx-auto px-6 py-8 md:grid md:grid-cols-12 md:gap-8">
+<!-- Left Column: Context & Status -->
+<div class="md:col-span-4 space-y-8 mb-8 md:mb-0">
+<div class="space-y-2">
+<label class="font-sans uppercase text-[10px] font-bold tracking-widest text-on-surface-variant">Table View</label>
+<div class="flex items-baseline gap-3">
+<h2 class="text-6xl font-headline font-bold text-primary">05</h2>
+<span class="text-lg font-headline text-on-surface-variant">Grand Dining Hall</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-full border-l-4 border-secondary-container">
+<p class="text-sm text-on-surface-variant mb-1 font-semibold uppercase tracking-wider">Server</p>
+<p class="text-lg font-headline font-bold text-tertiary">Vikram Singh</p>
+<div class="mt-4 flex gap-4 text-xs font-sans font-bold uppercase tracking-tighter opacity-70">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> 14:32 PM
+                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="group">group</span> 4 Guests
+                    </div>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="bg-surface-container rounded-xl p-6 space-y-4">
+<h3 class="font-headline font-bold text-primary">Action Log</h3>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5"></div>
+<p class="text-xs text-on-surface-variant">Table occupied at 13:15</p>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5"></div>
+<p class="text-xs text-on-surface-variant">Order confirmed by Chef Rahul at 13:20</p>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5"></div>
+<p class="text-xs text-on-surface-variant">Bill generated at 14:40</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: The Digital Receipt (Editorial Invoice) -->
+<div class="md:col-span-8">
+<div class="bg-white shadow-[0_40px_80px_rgba(73,0,10,0.06)] rounded-2xl overflow-hidden relative border border-outline-variant/10">
+<!-- Receipt Header -->
+<div class="p-8 text-center border-b border-dashed border-outline-variant/30">
+<h3 class="font-headline text-3xl font-bold text-primary mb-1">RAJDHANI</h3>
+<p class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface-variant mb-4">The Royal Heritage Kitchen</p>
+<div class="text-xs text-on-surface-variant leading-relaxed max-w-xs mx-auto">
+                        12th Floor, Heritage Square, MG Road<br/>
+                        Bangalore, KA 560001 | +91 80 4455 6677<br/>
+                        GSTIN: 29AAAAA0000A1Z5
+                    </div>
+</div>
+<!-- Itemized List -->
+<div class="p-8 space-y-6">
+<div class="grid grid-cols-12 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">
+<div class="col-span-6">Particulars</div>
+<div class="col-span-2 text-center">Qty</div>
+<div class="col-span-4 text-right">Amount</div>
+</div>
+<div class="space-y-5">
+<div class="grid grid-cols-12 items-baseline">
+<div class="col-span-6">
+<p class="font-body text-sm font-semibold text-on-surface">Maharaja Thali Experience</p>
+<p class="text-[10px] text-on-surface-variant italic">Unlimited seasonal delicacies</p>
+</div>
+<div class="col-span-2 text-center text-sm font-body">04</div>
+<div class="col-span-4 text-right font-headline font-bold text-on-surface">₹ 5,196.00</div>
+</div>
+<div class="grid grid-cols-12 items-baseline">
+<div class="col-span-6">
+<p class="font-body text-sm font-semibold text-on-surface">Kesar Pista Lassi</p>
+<p class="text-[10px] text-on-surface-variant italic">Saffron infused yogurt drink</p>
+</div>
+<div class="col-span-2 text-center text-sm font-body">02</div>
+<div class="col-span-4 text-right font-headline font-bold text-on-surface">₹ 790.00</div>
+</div>
+<div class="grid grid-cols-12 items-baseline">
+<div class="col-span-6">
+<p class="font-body text-sm font-semibold text-on-surface">Himalayan Spring Water</p>
+</div>
+<div class="col-span-2 text-center text-sm font-body">03</div>
+<div class="col-span-4 text-right font-headline font-bold text-on-surface">₹ 450.00</div>
+</div>
+<div class="grid grid-cols-12 items-baseline">
+<div class="col-span-6">
+<p class="font-body text-sm font-semibold text-on-surface">Shahi Tukda Platter</p>
+<p class="text-[10px] text-on-surface-variant italic">Complementary - Loyalty Reward</p>
+</div>
+<div class="col-span-2 text-center text-sm font-body">01</div>
+<div class="col-span-4 text-right font-headline font-bold text-on-surface">₹ 0.00</div>
+</div>
+</div>
+</div>
+<!-- Totals Section -->
+<div class="mx-8 p-6 bg-surface-container-low rounded-xl space-y-3 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Subtotal</span>
+<span class="font-headline font-bold text-on-surface">₹ 6,436.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Service Charge (5%)</span>
+<span class="font-headline font-bold text-on-surface">₹ 321.80</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">GST (18%)</span>
+<span class="font-headline font-bold text-on-surface">₹ 1,158.48</span>
+</div>
+<div class="pt-4 mt-2 border-t border-outline-variant/20 flex justify-between items-end">
+<div class="space-y-1">
+<span class="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Payable Amount</span>
+<div class="bg-secondary-container/30 px-2 py-0.5 rounded inline-block">
+<span class="text-[10px] font-bold text-secondary">ROYAL DINER DISCOUNT APPLIED</span>
+</div>
+</div>
+<span class="text-4xl font-headline font-bold text-primary">₹ 7,916.28</span>
+</div>
+</div>
+<!-- Footer Text -->
+<div class="p-8 text-center bg-surface-container-highest/30">
+<p class="font-headline italic text-on-surface-variant text-sm">"Atithi Devo Bhava"</p>
+<p class="mt-2 text-[10px] font-sans font-bold uppercase tracking-widest text-on-surface-variant">Thank you for dining with us</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-4 px-6 bg-surface-container-highest text-on-surface rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#e9e8e5] transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+                    Share Digital
+                </button>
+<button class="flex items-center justify-center gap-2 py-4 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold uppercase text-xs tracking-[0.1em] hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+                    Print Final Bill
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-[#f4f3f1]/90 backdrop-blur-xl dark:bg-[#1c1b1a]/90 shadow-[0_-8px_30px_rgb(73,0,10,0.04)] md:hidden">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] transition-colors">
+<span class="material-symbols-outlined" data-icon="event_seat">event_seat</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Booking</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#49000a] dark:text-[#ffb3b4] scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Billing</span>
+</div>
+</div>
+</nav>
+</body></html>

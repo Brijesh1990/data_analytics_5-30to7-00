@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rajdhani - Regal Indian Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary": "#49000a",
+                        "surface": "#faf9f6",
+                        "primary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#84232a",
+                        "inverse-primary": "#ffb3b2",
+                        "surface-variant": "#e3e2e0",
+                        "on-secondary-fixed": "#261a00",
+                        "on-primary-container": "#f4777a",
+                        "on-surface": "#1a1c1a",
+                        "secondary-fixed-dim": "#f1bf4c",
+                        "secondary": "#795900",
+                        "inverse-surface": "#2f312f",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#efeeeb",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface-container-low": "#f4f3f1",
+                        "tertiary-container": "#443123",
+                        "outline-variant": "#ddc0bf",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "primary-container": "#6b0f1a",
+                        "on-tertiary-container": "#b39985",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#564241",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fdca56",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed": "#ffdf9e",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-tertiary-fixed": "#28180b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#fbddc7",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-high": "#e9e8e5",
+                        "on-background": "#1a1c1a",
+                        "tertiary": "#2c1c0f",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf9f6",
+                        "outline": "#8a7171",
+                        "surface-bright": "#faf9f6",
+                        "on-primary-fixed": "#410008",
+                        "primary-fixed": "#ffdad9",
+                        "surface-tint": "#a43a3f",
+                        "on-secondary-container": "#735500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 0 40px rgba(73, 0, 10, 0.06);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #49000a 0%, #6b0f1a 100%);
+        }
+        .glass-panel {
+            background: rgba(244, 243, 241, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#faf9f6] dark:bg-[#1c1b1a] docked full-width top-0 sticky z-50 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#49000a] dark:text-[#ffb3b4] p-2 hover:bg-[#f4f3f1] dark:hover:bg-[#2c1c0f] rounded-full transition-colors active:scale-95">
+                    menu
+                </button>
+<h1 class="text-2xl font-serif font-bold text-[#49000a] dark:text-[#ffb3b4] tracking-tight">Rajdhani</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#49000a] font-bold font-sans uppercase tracking-widest text-xs" href="#">Home</a>
+<a class="text-[#564241] dark:text-[#d0c4c2] font-sans uppercase tracking-widest text-xs hover:text-[#49000a] transition-colors" href="#">Booking</a>
+<a class="text-[#564241] dark:text-[#d0c4c2] font-sans uppercase tracking-widest text-xs hover:text-[#49000a] transition-colors" href="#">Billing</a>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 transition-transform">
+<img alt="Staff Profile" class="w-full h-full object-cover" data-alt="close up headshot of a smiling professional hospitality manager in a well-lit hotel lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmormJgjUn0OBOiKU2BwtS5uHQYJgkKXmpeNEOJDGI_Qn-zv0w1DHbFPeCsAHtxUrvlt3BNidnqM24o0t4uNI5bije3jY8pGDL0uk8HAiZ1YD0HoJYdfLFuDtjOPCONWGYxOvvHFAwyXee73gIm0amUKmneUdS7VR5IYrSWRNC1_Xrrulr8iX22YF6I8awwv_EfC5qJnHPzMF5dYsZQ8bJiBAjvKcULdEN-_TctuMo1Pgblnic9mOBLIw5cUYdvJyhD0YKosxhFoJw"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="px-6 pt-8 pb-12 overflow-hidden">
+<div class="relative rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-[21/9] w-full">
+<img alt="Rajdhani Restaurant Ambiance" class="w-full h-full object-cover" data-alt="luxurious indian restaurant interior with ornate golden chandeliers, dark wood tables, and rich maroon velvet chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVgLVySOthzjLZ1gKyzRC5wGTXkO5Y6x8rcvrrGZfqsEOg3LizwU31hUlbNJQ9jQ6ZLA-jAk_tkuOYIaGkHHHFMHcykOeEpqtz4Wxn6zDUllplIcorRS9KUBgBqFD88Bvz5rk_1misIy2fH42FLVC60sRI9kBIUKspSw1KHYht5nEUIdm0xdzTgf33KLlWcx8QInTW6Osk4i1ua1Ch4GDSVU0HeLJ8FJ0Kn_26c4X3GiEbqlP0D4yw-XYWqh6dkqcPOtXoM3YOfg18"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full max-w-2xl">
+<h2 class="font-headline text-5xl md:text-7xl text-on-primary leading-tight mb-6 tracking-tight">A Royal Feast Awaits.</h2>
+<div class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-start md:items-center">
+<div class="flex-1">
+<p class="font-sans text-[10px] font-bold tracking-widest uppercase text-primary mb-2">Location</p>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                44th Floor, Park Street Heights,<br/>Kolkata, West Bengal 700016
+                            </p>
+</div>
+<div class="w-px h-12 bg-outline-variant/30 hidden md:block"></div>
+<div class="flex-1">
+<p class="font-sans text-[10px] font-bold tracking-widest uppercase text-primary mb-2">Contact</p>
+<p class="font-body text-sm text-on-surface-variant">
+                                +91 33 2456 7890<br/>reservations@rajdhani.com
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Action -->
+<section class="px-6 mb-16">
+<button class="w-full md:w-auto md:px-12 py-5 primary-gradient rounded-full text-on-primary font-sans text-sm font-bold tracking-[0.1em] uppercase shadow-lg active:scale-[0.98] transition-transform flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+                Book a Table
+            </button>
+</section>
+<!-- Categories Section -->
+<section class="mb-16">
+<div class="px-6 flex justify-between items-end mb-8">
+<div>
+<span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-2 block">Curation</span>
+<h3 class="font-headline text-3xl text-primary">Discover Flavors</h3>
+</div>
+<button class="text-primary font-sans text-xs font-bold uppercase tracking-widest border-b border-secondary-container pb-1">View Full Menu</button>
+</div>
+<div class="flex overflow-x-auto gap-6 px-6 pb-4 snap-x">
+<!-- Thalis -->
+<div class="snap-start flex-none w-72 group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-4 editorial-shadow transition-transform group-hover:scale-[1.02]">
+<img alt="Thalis" class="w-full h-full object-cover" data-alt="traditional large indian silver thali with various small bowls containing colorful curries, dals, rice, and fresh naan bread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8lKpINLoxTPQeWnEO0G5k5auv0flHmeTHsyguNjLYVG6D6ICiPMjVuOz1SzXOtpBLN-HtcN0gZGCrnp6vair8Cfxtz1v2Bn3Gd1HYM4VdU9NBn_TUvxfn0sRVMEtvREyw8FN7afRfBVMF9tvURQyI9xJBLxSTrY1WR4EyxpckUrUI2iqmi6CoTB45vC9Wj2WoEaoWd31DokTJNa3H6F-PpVFwsrtyVYjyxphc_8UJiFFhPg9cZlaOTBS_klDybaUry9eKyGMhGUGO"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Premium</div>
+</div>
+<h4 class="font-headline text-xl text-on-surface mb-1">Thalis</h4>
+<p class="text-on-surface-variant text-sm italic">The ultimate royal experience</p>
+</div>
+<!-- Starters -->
+<div class="snap-start flex-none w-72 group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-4 editorial-shadow transition-transform group-hover:scale-[1.02]">
+<img alt="Starters" class="w-full h-full object-cover" data-alt="gourmet plated indian appetizers with vibrant chutneys and microgreens garnish on a minimalist stone plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsRTyRvy5SK1qTAlASVNzomQq4OiivpKvaTzIonENxF_P65Ozm415WoNS-AAvHhpqH70at8Z-bR6HyFWEJzO5lhGq6QmyKgUtY3XysRKn-OtlqgwrJ9hWKhfObkXGjhV8rC8kqUQbISqC0hR0pHl-kkSQ5tA6-xF0ehKFEhTzg52Sf0iVYOOz8B-sdNcmGLuazDq7j1MegU0iUENx3M3OtM2s_0X6KeojQbVH0Ip2b4gbQbnYebRbhxKpGl9D3XmbVN6OPNdgA_qAW"/>
+</div>
+<h4 class="font-headline text-xl text-on-surface mb-1">Starters</h4>
+<p class="text-on-surface-variant text-sm italic">Awaken your palate</p>
+</div>
+<!-- Desserts -->
+<div class="snap-start flex-none w-72 group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-4 editorial-shadow transition-transform group-hover:scale-[1.02]">
+<img alt="Desserts" class="w-full h-full object-cover" data-alt="traditional indian sweets like gulab jamun and rasmalai served in artisanal clay bowls with saffron strands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6ezpiR8n1z6EfZ028rGywUAzuB-PNtZyjfkii_AntPpZl1wwjApHr-Lb3ycWtfI1HnStgdHw8X9fwqm9e5gQNIT3nZNaPgnvxJ8b9WBOIWMLVQw4p49fQlyhvg5WSqzzsYBREnJ_-EO4eUXTCpKAFM8I3fJ1YvBQhCFn7gptLwOqIuxzR000mna2m0IHgSaMANKUWnPurYOL-amHXsg0rlVwq5zvyRB0v34x2QOQ3C2XUjcgKC5A2R7JMFNyV1h5M86-beYVsa5i"/>
+</div>
+<h4 class="font-headline text-xl text-on-surface mb-1">Desserts</h4>
+<p class="text-on-surface-variant text-sm italic">Sweet heritage of India</p>
+</div>
+<!-- Beverages -->
+<div class="snap-start flex-none w-72 group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-4 editorial-shadow transition-transform group-hover:scale-[1.02]">
+<img alt="Beverages" class="w-full h-full object-cover" data-alt="refreshing tall glass of mango lassi with crushed pistachios and a copper tumbler of spiced masala chai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArlbboRFyvyskQdu2_dpvdzfjAPxtTySV_nwmdLG8F78xeh3gcbvtfag_M6w8WHgudyxnciqq7xmCI6cyJD6x0ucSiWs6Da2I4rBkRml653yprK_3yFAKBos6ERxzME-fDEnzHDOcH0SMWOqOq4V3UGbPMdTGE31Cj0PCfz5qV_U_p4mK7N3_oZr4qZFvFeFi6e67z2u_oBRlCJjF_3bk7pg7TmMm8dEtYhZ7SQGF3jcjE3ucEbnotdzV28jAvjdEyIMKbJ7GoBUwi"/>
+</div>
+<h4 class="font-headline text-xl text-on-surface mb-1">Beverages</h4>
+<p class="text-on-surface-variant text-sm italic">Cooling elixirs &amp; infusions</p>
+</div>
+</div>
+</section>
+<!-- Signature Bento Grid -->
+<section class="px-6 mb-12">
+<h3 class="font-headline text-3xl text-primary mb-8">Today's Special</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[600px] md:h-[450px]">
+<div class="md:col-span-2 bg-surface-container-low rounded-[2rem] p-8 flex flex-col justify-end relative overflow-hidden group">
+<img alt="Maharaja Thali" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="wide shot of an expansive maharaja thali with 25+ dishes on a polished brass platter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-2hTjiA7IY8T2f8-OY-mOXTxpYYuobpCnlh8M4gMkoQPEhRP5_U3X-e7u15TPICvO4bD-Z1mJI-aVY8eCxgAbrM-uQeDdvedoLVSm_3morDDecukRmgIbf_b_DJNVRMHkupSDBWy50FJAvN1zGcjn7pUBzY42BETBlSopK2niFdaNmSnsgYT9A-tujrj2eyrx2gmLuLpO56liIzN96VKOSH6BKvhpbWhsAfe28FTcICOTnNoRLwyekZ8qKXbo-Yxt0jYh3ZleIHG1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="relative z-10">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest mb-4 inline-block">Most Loved</span>
+<h4 class="font-headline text-4xl text-on-primary mb-2">The Maharaja Thali</h4>
+<p class="text-on-primary/80 text-sm max-w-md">Our signature 24-course dining experience that brings the flavors of Gujarat and Rajasthan to your table.</p>
+</div>
+</div>
+<div class="bg-primary-container rounded-[2rem] p-8 flex flex-col justify-between text-on-primary">
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-2xl mb-4">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+</div>
+<div>
+<h4 class="font-headline text-2xl mb-2">Royalty Rewards</h4>
+<p class="text-on-primary-container text-sm leading-relaxed mb-6">Earn points on every visit and unlock exclusive chef-table events.</p>
+<button class="text-secondary-container font-sans text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            Join Club
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#f4f3f1]/90 backdrop-blur-xl dark:bg-[#1c1b1a]/90 fixed bottom-0 w-full z-50 rounded-t-3xl shadow-[0_-8px_30px_rgb(73,0,10,0.04)] md:hidden">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center text-[#49000a] dark:text-[#ffb3b4] scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Home</span>
+</button>
+<!-- Booking -->
+<button class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] transition-all">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Booking</span>
+</button>
+<!-- Billing -->
+<button class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] transition-all">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase mt-1">Billing</span>
+</button>
+</div>
+</nav>
+</body></html>

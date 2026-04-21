@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rajdhani Billing Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary": "#49000a",
+                        "surface": "#faf9f6",
+                        "primary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#84232a",
+                        "inverse-primary": "#ffb3b2",
+                        "surface-variant": "#e3e2e0",
+                        "on-secondary-fixed": "#261a00",
+                        "on-primary-container": "#f4777a",
+                        "on-surface": "#1a1c1a",
+                        "secondary-fixed-dim": "#f1bf4c",
+                        "secondary": "#795900",
+                        "inverse-surface": "#2f312f",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#efeeeb",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface-container-low": "#f4f3f1",
+                        "tertiary-container": "#443123",
+                        "outline-variant": "#ddc0bf",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "primary-container": "#6b0f1a",
+                        "on-tertiary-container": "#b39985",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#564241",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fdca56",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed": "#ffdf9e",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "on-tertiary-fixed": "#28180b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#fbddc7",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-high": "#e9e8e5",
+                        "on-background": "#1a1c1a",
+                        "tertiary": "#2c1c0f",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf9f6",
+                        "outline": "#8a7171",
+                        "surface-bright": "#faf9f6",
+                        "on-primary-fixed": "#410008",
+                        "primary-fixed": "#ffdad9",
+                        "surface-tint": "#a43a3f",
+                        "on-secondary-container": "#735500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .glass-panel {
+            background: rgba(244, 243, 241, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#faf9f6] dark:bg-[#1c1b1a] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#49000a] dark:text-[#ffb3b4]">menu</span>
+<h1 class="text-2xl font-serif font-bold text-[#49000a] dark:text-[#ffb3b4] tracking-tight">Rajdhani</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<span class="font-sans uppercase text-[12px] tracking-widest text-[#564241] dark:text-[#d0c4c2] hover:bg-[#f4f3f1] dark:hover:bg-[#2c1c0f] transition-colors px-3 py-2 cursor-pointer">Home</span>
+<span class="font-sans uppercase text-[12px] tracking-widest text-[#564241] dark:text-[#d0c4c2] hover:bg-[#f4f3f1] dark:hover:bg-[#2c1c0f] transition-colors px-3 py-2 cursor-pointer">Booking</span>
+<span class="font-sans uppercase text-[12px] tracking-widest text-[#49000a] font-bold px-3 py-2 cursor-pointer">Billing</span>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Staff Profile Avatar" data-alt="professional portrait of a high-end restaurant manager in uniform with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq53bHCOc0RTalVnH7lkPAa3PX2fDl60t2fF9Yr0MqD21qN-KxSKigq8auffjlOgBG2272cRN7geU5J3jC59aIBNoOVU4G74I33qp10W1OHiknwuQgOglEyrJLMoWMACtsrGEU0GEjKQYCsTFBaPMrcAjB4TtJcfk-rMgnr1pN7NwJ043vbOSGFzVHlaKaM6GQX3FY5IbyjV1e6Oet266FoyzSyDT8FAhF-PWkmsCGttNi3lVovoONYN4adguxBKCM2flq5X8650oO"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Revenue Summary Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row gap-6">
+<!-- Main Revenue Card -->
+<div class="flex-1 bg-surface-container-low p-8 rounded-xl shadow-[0_40px_40px_rgba(73,0,10,0.04)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container opacity-20 rounded-bl-full"></div>
+<p class="text-on-surface-variant font-sans uppercase text-[10px] tracking-[0.2em] mb-2">Daily Revenue Summary</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-serif font-bold text-primary">₹</span>
+<h2 class="text-5xl font-serif font-bold text-primary tracking-tighter">1,42,850.00</h2>
+</div>
+<div class="mt-4 flex gap-4">
+<div class="flex items-center gap-1 text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>12% from yesterday</span>
+</div>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-2 gap-4 w-full md:w-1/3">
+<div class="bg-surface-container-highest p-6 rounded-xl flex flex-col justify-between">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Active Tables</p>
+<h3 class="text-3xl font-serif text-primary">14/20</h3>
+</div>
+<div class="bg-surface-container-highest p-6 rounded-xl flex flex-col justify-between">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Avg. Check</p>
+<h3 class="text-3xl font-serif text-primary">₹ 4,200</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Tables Listing -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-serif text-primary">Active Bill Management</h2>
+<p class="text-on-surface-variant mt-1">Real-time status of all currently occupied tables.</p>
+</div>
+<div class="hidden md:flex gap-2">
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-all">All Tables</button>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary text-xs font-bold uppercase tracking-widest transition-all">Occupied</button>
+</div>
+</div>
+<!-- Table List (List-based layout per request) -->
+<div class="space-y-4">
+<!-- Table Row 1 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between border-l-4 border-secondary-container">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="text-2xl font-serif font-bold text-primary">08</span>
+</div>
+<div>
+<h4 class="text-lg font-serif font-bold">Mr. Kapoor &amp; Guest</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">group</span> 4 People • 1h 12m elapsed
+                            </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+<div class="text-left md:text-right">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-50">Current Total</p>
+<p class="text-2xl font-serif font-bold text-primary">₹ 8,450.00</p>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">
+                            Generate Bill
+                        </button>
+</div>
+</div>
+<!-- Table Row 2 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between border-l-4 border-secondary-container">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="text-2xl font-serif font-bold text-primary">12</span>
+</div>
+<div>
+<h4 class="text-lg font-serif font-bold">Ms. Sharma</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">group</span> 2 People • 45m elapsed
+                            </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+<div class="text-left md:text-right">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-50">Current Total</p>
+<p class="text-2xl font-serif font-bold text-primary">₹ 3,120.00</p>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">
+                            Generate Bill
+                        </button>
+</div>
+</div>
+<!-- Table Row 3 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between border-l-4 border-secondary-container">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="text-2xl font-serif font-bold text-primary">04</span>
+</div>
+<div>
+<h4 class="text-lg font-serif font-bold">Verma Family</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">group</span> 6 People • 2h 05m elapsed
+                            </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+<div class="text-left md:text-right">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-50">Current Total</p>
+<p class="text-2xl font-serif font-bold text-primary">₹ 12,900.00</p>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">
+                            Generate Bill
+                        </button>
+</div>
+</div>
+<!-- Table Row 4 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between border-l-4 border-secondary-container">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="text-2xl font-serif font-bold text-primary">21</span>
+</div>
+<div>
+<h4 class="text-lg font-serif font-bold">Corporate Table</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">group</span> 8 People • 30m elapsed
+                            </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+<div class="text-left md:text-right">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-50">Current Total</p>
+<p class="text-2xl font-serif font-bold text-primary">₹ 15,400.00</p>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">
+                            Generate Bill
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State / Footer Tonal Shift -->
+<div class="mt-12 p-8 border border-dashed border-outline-variant rounded-xl text-center">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">table_restaurant</span>
+<p class="font-serif text-lg">6 Additional Tables Available</p>
+<p class="text-sm text-on-surface-variant">Waiting for guest seating and initial orders.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-[#f4f3f1]/90 backdrop-blur-xl dark:bg-[#1c1b1a]/90 shadow-[0_-8px_30px_rgb(73,0,10,0.04)] flex justify-around items-center px-4 pb-6 pt-3 md:hidden">
+<div class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] dark:hover:text-[#ffb3b4]">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#564241] dark:text-[#d0c4c2] opacity-60 hover:text-[#49000a] dark:hover:text-[#ffb3b4]">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase">Booking</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#49000a] dark:text-[#ffb3b4] scale-110 transition-transform">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-sans text-[10px] font-bold tracking-widest uppercase">Billing</span>
+</div>
+</nav>
+<!-- Floating Action Button - Only for Relevant Task -->
+<div class="fixed bottom-24 right-8 md:bottom-12 md:right-12 z-40">
+<button class="w-16 h-16 rounded-full bg-secondary-container shadow-2xl flex items-center justify-center text-primary hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</body></html>
