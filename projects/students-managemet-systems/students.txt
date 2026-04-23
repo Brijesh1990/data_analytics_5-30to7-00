@@ -1,0 +1,3 @@
+brijesh , 35 , 481256121 ,A , Btech 
+divyang , 34 , 1545612145 ,A , DA 
+hetkumar , 22 , 5424545 ,A , BCA 
