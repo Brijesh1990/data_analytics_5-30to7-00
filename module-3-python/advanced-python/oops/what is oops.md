@@ -1,8 +1,9 @@
 # what is oops in python ? 
   1. oops stands for object oriented programming structured language
   2. oops used in advanced python 
-  3. oops provides some features in python
-
+  3. oops basically used inn web developement using python with django oops
+  4. oops provides some features in python
+  
      types of oops features 
 
      1. class 
@@ -11,6 +12,13 @@
      4. polymorphism 
      5. encapsulations 
      6. abstractions 
+
+
+ **architectures of oops features**
+
+ https://miro.medium.com/0*kPat5mwo2lVx7sqR
+
+  
 
 # what is class in oops ? 
 
@@ -60,6 +68,8 @@
   1. A constructor is same name of the class 
   2. A constructor called inside of python __init__
   3. A constructor automatically called when we create an object of class 
+  4. __init__ is an method of constructor
+  5. its calls when object is created of class 
 
      **examples of constructor**
 
@@ -79,7 +89,7 @@
 
   1. self is used to stored a current object 
   2. self is used to called the method of class 
-  3. self is not reserved keyword it will be changed name self=result
+  3. self is not reserved keyword it will be changed name self=result just like parameter or arguments of function
 
   **examples of self**
 
@@ -112,5 +122,15 @@
  **types of inheritance**
 
  1. single inheritance 
+
+   ![alt text](image.png)
+
+
  2. multilevel inheritance 
- 3. multiple inheritance 
+
+ ![alt text](image-1.png)
+
+ 3. multiple inheritance (support in python)
+
+ ![alt text](image-2.png)
+
