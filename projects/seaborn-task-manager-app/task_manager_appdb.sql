@@ -1,0 +1,1 @@
+SELECT * FROM task_manager_appdb.tasks;
