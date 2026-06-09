@@ -1065,3 +1065,29 @@ select student_id,studentname,address,grade, countryname from tbl_student join t
 
 # how to rollback data from sql 
 
+# what is view in SQL ? 
+
+  1. An SQL view is a dublicate tables of main tables 
+  2. A SQL view is a virtual tables of your main tables 
+  3. A SQL views is a copy of main tables 
+
+**How to create a view**  
+
+```
+create view view_employee as select empid,empname,password from employee where empid=3
+
+
+```
+
+# w.a.q to find second highest salary from table employee but without using subquery....
+
+
+ ```
+ with subquery...
+ select max(salary) from employee where salary < (select max(salary) from employee)
+ 
+ without subquery...
+ select * from employee   order by salary DESC limit 1,1;
+ max salary...
+ select * from employee   order by salary DESC limit 0,1;
+ ```
