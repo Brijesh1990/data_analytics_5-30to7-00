@@ -759,6 +759,7 @@ WHERE order_id= 1;
  ```
 
  **faculty based database**
+
 1. create a database named "university"
 2. create a table named "faculty" with the following columns: faculty_id (primary key), faculty_name, department, and country_id (foreign key referencing the country table) and provides email as unique key in faculty tables.
 3. insert at least 5 records into the faculty table.
