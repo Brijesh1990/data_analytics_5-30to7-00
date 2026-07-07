@@ -46,7 +46,7 @@ def display_task():
     
 # update task
 def update_task():
-     taskid=int(input("Enter task id for delete :"))
+     taskid=int(input("Enter task id for Update :"))
      title=input("Enter task Name* :")
      priority=input("Enter your task priority* :")
      status=input("Enter your task status* :")
