@@ -6,6 +6,6 @@ course varchar(255),
 revenue int,
 expense int,
 profit_loss int,
-added_date varchar(255)
+added_date timestamp
 
 )

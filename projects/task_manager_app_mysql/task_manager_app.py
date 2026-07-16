@@ -20,7 +20,6 @@ cursor=db.cursor()
 print("connection successfully stablished")
 
 # add task create a function 
-
 def add_task():
     title=input("Enter task Name* :")
     priority=input("Enter your task priority* :")
