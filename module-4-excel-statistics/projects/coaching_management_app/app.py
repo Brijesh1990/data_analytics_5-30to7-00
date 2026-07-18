@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as snb
-from datetime import datetime
+import datetime
+# from datetime import datetime
 # name="welcome to coaching management app"
 # print(name)
 # database connection mysql.connector 
@@ -28,7 +29,7 @@ def add_data():
     revenue=int(input("Enter your revenue * :"))
     expense=int(input("Enter your expense * :"))
     profit_loss=int(input("Enter profit/loss * :"))
-    added_date=datetime.now()
+    added_date=datetime.datetime.now()
     sql="""
      insert into tbl_coaching_data(studentname,course,revenue,expense,profit_loss,added_date) VALUES (%s,%s,%s,%s,%s,%s)
     """
@@ -40,7 +41,7 @@ def add_data():
     
 # display coaching data 
 def display_data():
-    cursor.execute("select * from tbl_coaching_data")
+    cursor.execute("select * from tbl_coaching_data order by taxid desc")
     result=cursor.fetchall()
     print("\n=====display all coaching revenue data =======")
     for i in result:
@@ -79,7 +80,31 @@ def load_df():
     df=pd.read_sql(query,db)
     print("\n=====dataframes=======")
     print(df)
+    return df
+# create a function for sum total data or profit revenue
+def sum_df():
+    query="select sum(profit_loss) as total_sum from tbl_coaching_data"
+    df=pd.read_sql(query,db)
+    print("\n=====dataframes=======")
+    print(df)
     return df 
+# create a function to generate 
+def export_data():
+    df=load_df()
+    df1=sum_df()
+    output_file = "coaching_revenue_generate_file.xlsx"
+    
+    with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
+        # Write main data
+        df.to_excel(writer, sheet_name="Report", index=False)
+
+        # Write total below the main data
+        start_row = len(df) + 2
+        start_col=len(df) - 2
+        df1.to_excel(writer, sheet_name="Report",  startrow=start_row, startcol=start_col,  index=False)
+
+    print(f"Data exported successfully to {output_file}")
+ 
 
 # create a function for pie chart display data in chart
 def showpiechart():
@@ -102,16 +127,15 @@ def showpiechart():
     plt.tight_layout()
     plt.show()
     
-# create a function for pie chart display data in chart
+# create a function for bar chart display data in chart
 def showbarchart():
     df = load_df()
 
     if df.empty:
         print("No data found.")
         return
-
+    
     plt.figure(figsize=(10,5))
-
     plt.bar(
         df["studentname"],
         df["profit_loss"]
@@ -136,7 +160,8 @@ while True:
     4. delete coaching data
     5. show data in chart
     6. show  data in bar chart
-    7. exit
+    7. export data in excel
+    8. exit
     
      """)
     
@@ -153,7 +178,9 @@ while True:
     elif choice=="5":
         showpiechart()    
     elif choice=="6":
-        showbarchart()    
+        showbarchart()
+    elif choice=="7":
+        export_data()        
     else:
         print("You selected wrong choice")
         break
