@@ -1,9 +1,9 @@
-# what is excel in DA explain Excel? 
+# what is Microsoft excel in DA explain Excel? 
 
 1. excel is an application software 
 2. excel basically create  workbook
 3. excel files extension 
- 
+
 examples : workbook1.xlsx
 
 **screenshot**
@@ -41,7 +41,6 @@ examples : sum() , avg() , min() , max(), index(), vlookup() , textlookup(), mat
 
 9. Range : A group of adjacent cells for examples : cell(A1:B5)
                         cell(A2:B5)
-
 
 
 # basic interface related in excel
@@ -158,3 +157,99 @@ examples :
 | `=NOW()` | Current date and time | Current timestamp |
 | `=VLOOKUP(101,A2:D10,2,FALSE)` | Find matching value | Employee name |
 | `=XLOOKUP(101,A2:A10,B2:B10)` | Modern lookup | Employee name |
+
+
+
+# what is pivot tables ? 
+
+ 1. A pivot table is one of most powerful features in Excel
+ 2. Pivot is allow you to summerise , analize , organize , and calculate large amount of data without  writing complex formulas.
+ 
+
+## why we called it pivot in excel ?
+
+ 1. The word pivot means rotate or turn arround
+ 2. In excel you can rotate rows into columns and columns into rows and re-arrange data without changing the original dataset
+
+
+## advantages of using pivot in excel ?
+
+ 1. Analyze thousands of rows in seconds 
+ 2. Find totals sales on thousands or lakhs of data
+ 3. Calculate average salary 
+ 4. comapared data department wise
+ 6. generate reports 
+ 7. create dashboard 
+ 8. analyze profits 
+ 9. summerize expenses 
+ 10. group dates (month , quarter , yearly)
+
+
+## features of pivot table in excels ? 
+
+ 1. No formula required to calculate 
+ 2. Drag and drop interface 
+ 3. Automatic calculations 
+ 4. dynamic reports generate 
+ 5. easy filtering 
+ 6. sorting 
+ 7. Grouping 
+ 8. Data Refresh
+ 9. Multiple Calculations 
+
+
+
+## task 
+1. create a 100 data of files of employee.xlsx
+2. create a tables into pivot tables 
+3. case based query resolved 
+
+   - total salary department wise 
+   - solution ...
+   - rows 
+   - department 
+   - values 
+   - salary 
+   
+
+4. case based query resolved 
+
+   - employee count department wise  
+   - solution ...
+   - rows 
+   - department 
+   - values 
+   - employee 
+
+5. case based query resolved 
+
+   - Average salary of employee  department wise  
+   - solution ...
+   - department 
+   - values 
+   - salary
+   - average    
+
+6. case based query resolved 
+   - Max salary city wise  
+   - solution ...
+   - salary 
+   - values(max) 
+   - city
+   - value       
+
+6. case based query resolved 
+   - Min salary city wise  
+   - solution ...
+   - salary 
+   - values (min) 
+   - city
+   - value          
+
+    
+7. case based query resolved 
+   - filter only IT departments of data  
+   - solution ...
+   - department 
+   - values (now choose IT) 
+   
