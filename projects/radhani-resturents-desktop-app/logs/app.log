@@ -90,3 +90,11 @@ Params: ('admin', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c72
 [2026-08-01 18:33:00] [INFO] [customer.py:53] - Created customer 'brijesh' (9923111212121) with ID 2
 [2026-08-01 18:33:00] [INFO] [order.py:111] - Order created successfully. Bill #: RAJ-20260801-0005, ID: 5, Total: 294.0
 [2026-08-01 18:33:30] [INFO] [order.py:111] - Order created successfully. Bill #: RAJ-20260801-0006, ID: 6, Total: 294.0
+[2026-08-01 18:39:31] [INFO] [main.py:14] - ===========================================
+[2026-08-01 18:39:31] [INFO] [main.py:15] - Starting Rajdhani Restaurant POS System
+[2026-08-01 18:39:31] [INFO] [main.py:16] - ===========================================
+[2026-08-01 18:39:31] [INFO] [init_db.py:16] - Initializing Rajdhani POS database...
+[2026-08-01 18:39:31] [INFO] [init_db.py:26] - Database `rajdhani_pos_db` checked/created successfully.
+[2026-08-01 18:39:31] [INFO] [init_db.py:58] - Schema & sample seed data applied successfully.
+[2026-08-01 18:39:37] [INFO] [user.py:27] - User 'admin' logged in successfully as admin.
+[2026-08-01 18:39:37] [INFO] [app.py:168] - User admin (admin) logged in.
