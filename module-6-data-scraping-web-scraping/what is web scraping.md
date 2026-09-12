@@ -139,7 +139,7 @@ print(title.text)
 
 ```
    
-# scrape product list with title and price from any website 
+# scrape product list with title and price from any website and also import its data in csv | excel | json formate
 
 ```
 import requests
