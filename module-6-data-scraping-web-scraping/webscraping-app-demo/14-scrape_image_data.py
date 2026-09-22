@@ -32,7 +32,7 @@ print(df.to_string(index=False))
 # Export to CSV
 # --------------------------------
 df.to_csv(
-    "images_list.csv",
+    "images_list_csv.csv",
     index=False,
     encoding="utf-8"
 )
@@ -41,7 +41,7 @@ df.to_csv(
 # Export to Excel
 # --------------------------------
 df.to_excel(
-    "images_list.xlsx",
+    "images_list_excel.xlsx",
     index=False,
     engine="openpyxl"
 )
@@ -50,7 +50,7 @@ df.to_excel(
 # Export to JSON
 # --------------------------------
 df.to_json(
-    "images_list.json",
+    "images_list_json.json",
     orient="records",
     indent=4,
     force_ascii=False
@@ -58,9 +58,9 @@ df.to_json(
 
 print("\n===================================")
 print("Files exported successfully!")
-print("CSV   : images_list.csv")
-print("Excel : images_list.xlsx")
-print("JSON  : images_list.json")
+print("CSV   : images_list_csv.csv")
+print("Excel : images_list_excel.xlsx")
+print("JSON  : images_list_json.json")
 print("===================================")
 
 
